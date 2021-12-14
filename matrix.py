@@ -31,3 +31,33 @@ def matrix_multiplication(matrix1, matrix2):
             for kk in range(n):
                 multiplication_matrix[i][j] += matrix1[i][kk] * matrix2[kk][j]
     return multiplication_matrix
+
+
+def multiplication_matrix_scalar(matrix, number=2):
+    """
+    Функция для умножения матрицы на число. Принимает на вход матрицу и число на которое надо умножить
+    :param matrix: исходная матрица
+    :param number: число на которое надо умножить
+    :return: матрица после умножения
+    """
+    multiplication_matrix = [[1 for j in range(len(matrix[0]))] for i in range(len(matrix))]
+    a = len(matrix)
+    b = len(matrix[0])
+    for i in range(a):
+        for j in range(b):
+            multiplication_matrix[i][j] = matrix[i][j] * number
+    return multiplication_matrix
+
+
+def matrix_print(matrix, width=3):
+    """
+    Функция для печати матрицы. На вход принимает двумерный список list.
+    :param matrix:
+    :param width: сколько символов будет выделенно на каждый элемент(включая скобки)
+    :return:
+    """
+    for i in matrix:
+        for j in i:
+            print(str.center("[%d]" % j, width), end='')
+        print()
+        
